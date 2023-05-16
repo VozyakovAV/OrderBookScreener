@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderBookScreener"
         mc:Ignorable="d"
-        Title="Скринер стакана" MinHeight="400" Height="850" MinWidth="600" Width="1200"
+        Title="Скринер стаканов" MinHeight="400" Height="850" MinWidth="600" Width="1200"
         WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <local:MainVM/>
@@ -215,15 +215,9 @@
                         <DataGridTextColumn Header="Спрос" Binding="{Binding Path=BestBid}" IsReadOnly="True" />
                         <DataGridTextColumn Header="Предл" Binding="{Binding Path=BestAsk}" IsReadOnly="True" />
                         <DataGridTextColumn Header="Спред %" Binding="{Binding Path=SpreadPrc}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Большая заявка" Binding="{Binding Path=BigQty}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Крупная заявка" Binding="{Binding Path=BigQty}" IsReadOnly="True" />
                         <DataGridTextColumn Header="Объем, контрактов" Binding="{Binding Path=Voltoday, StringFormat=N0}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Объем, руб" Binding="{Binding Path=Valtoday, StringFormat=N0}" IsReadOnly="True">
-                            <DataGridTextColumn.HeaderStyle>
-                                <Style TargetType="DataGridColumnHeader">
-                                    <Setter Property="ToolTip" Value="Данные с мосбиржи, с задержкой"/>
-                                </Style>
-                            </DataGridTextColumn.HeaderStyle>
-                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Объем, руб" Binding="{Binding Path=Valtoday, StringFormat=N0}" IsReadOnly="True" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -277,8 +271,8 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 
-                                    <Button Grid.Column="0" x:Name="btnBuy" Click="OnSendOrder" Content="Купить" Background="LightGreen" Margin="4"/>
-                                    <Button Grid.Column="1" x:Name="btnSell" Click="OnSendOrder" Content="Продать" Background="PaleVioletRed" Margin="4"/>
+                                    <Button Grid.Column="0" x:Name="btnBuy" Click="OnSendOrder" Content="Купить" Background="#A5E380" Margin="4"/>
+                                    <Button Grid.Column="1" x:Name="btnSell" Click="OnSendOrder" Content="Продать" Background="#FFA8A4" Margin="4"/>
                                 </Grid>
                             </StackPanel>
                         </GroupBox>

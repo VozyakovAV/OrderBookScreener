@@ -17,10 +17,10 @@
                 <EventSetter Event="PreviewMouseDown" Handler="OnClickCell"/>
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Path=IsBid}" Value="True">
-                        <Setter Property="Background" Value="LightGreen" />
+                        <Setter Property="Background" Value="#A5E380" />
                     </DataTrigger>
                     <DataTrigger Binding="{Binding Path=IsBid}" Value="False">
-                        <Setter Property="Background" Value="PaleVioletRed" />
+                        <Setter Property="Background" Value="#FFA8A4" />
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
