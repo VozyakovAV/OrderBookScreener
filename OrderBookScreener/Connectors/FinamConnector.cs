@@ -124,6 +124,7 @@ namespace OrderBookScreener.Connectors
                         Currency = item.Name,
                         Balance = item.Balance.Normalize(),
                     };
+                    if (money.Balance < 0) continue;
                     _moneys[money.Currency] = money;
                 }
                 UpdateMoneys?.Invoke();

@@ -12,6 +12,9 @@
     </Window.DataContext>
     <Window.Resources>
         <Image x:Key="imgRemove" Source="Images/remove.png" Width="10" Height="10"/>
+        <Style x:Key="CellRight" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -57,7 +60,7 @@
                             <GridViewColumn Header="Инструмент">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Symbol}" MinWidth="100" />
+                                        <TextBlock Text="{Binding Path=Symbol}" MinWidth="80" />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
@@ -93,7 +96,7 @@
                             <GridViewColumn Header="Инструмент">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Symbol}" MinWidth="100" />
+                                        <TextBlock Text="{Binding Path=Symbol}" MinWidth="80" />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
@@ -212,12 +215,17 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Инструмент" Binding="{Binding Path=SecCode}" IsReadOnly="True" />
                         <DataGridTextColumn Header="Площадка" Binding="{Binding Path=SecBoard}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Спрос" Binding="{Binding Path=BestBid}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Предл" Binding="{Binding Path=BestAsk}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Спред %" Binding="{Binding Path=SpreadPrc}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Крупная заявка" Binding="{Binding Path=BigQty}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Объем, контрактов" Binding="{Binding Path=Voltoday, StringFormat=N0}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Объем, руб" Binding="{Binding Path=Valtoday, StringFormat=N0}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Спрос" Binding="{Binding Path=BestBid}"
+                                            IsReadOnly="True" ElementStyle="{StaticResource CellRight}" />
+                        <DataGridTextColumn Header="Предл" Binding="{Binding Path=BestAsk}"
+                                            IsReadOnly="True" ElementStyle="{StaticResource CellRight}" />
+                        <!--<DataGridTextColumn Header="Спред %" Binding="{Binding Path=SpreadPrc}" IsReadOnly="True" />-->
+                        <DataGridTextColumn Header="Крупная заявка" Binding="{Binding Path=BigQty}"
+                                            IsReadOnly="True" ElementStyle="{StaticResource CellRight}" />
+                        <DataGridTextColumn Header="Объем, контрактов" Binding="{Binding Path=Voltoday, StringFormat=N0}" 
+                                            IsReadOnly="True" ElementStyle="{StaticResource CellRight}" />
+                        <DataGridTextColumn Header="Объем, руб" Binding="{Binding Path=Valtoday, StringFormat=N0}" 
+                                            IsReadOnly="True" ElementStyle="{StaticResource CellRight}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
